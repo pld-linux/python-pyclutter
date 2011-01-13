@@ -4,9 +4,9 @@ Summary(pl.UTF-8):	Dowiązania Pythona dla Cluttera
 Name:		python-%{module}
 Version:	1.0.2
 Release:	1
-License:	LGPL v2
+License:	LGPL v2.1
 Group:		Libraries/Python
-Source0:	http://www.clutter-project.org/sources/pyclutter/1.0/%{module}-%{version}.tar.bz2
+Source0:	http://source.clutter-project.org/sources/pyclutter/1.0/%{module}-%{version}.tar.bz2
 # Source0-md5:	6655951d0e1edf4a5db304efa972b730
 Patch0:		%{name}-nodebug.patch
 URL:		http://www.clutter-project.org/
@@ -14,6 +14,7 @@ BuildRequires:	autoconf >= 2.53
 BuildRequires:	automake >= 1:1.9
 BuildRequires:	clutter-devel >= 1.0.0
 BuildRequires:	libtool
+BuildRequires:	libxslt-progs
 BuildRequires:	pkgconfig
 BuildRequires:	python-devel >= 1:2.5
 BuildRequires:	python-pycairo-devel >= 1.2.0
@@ -94,11 +95,12 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{py_sitedir}/clutter/glx.so
 %attr(755,root,root) %{py_sitedir}/clutter/x11.so
 %{py_sitedir}/clutter/*.py[co]
-%{_datadir}/pyclutter
 
 %files devel
 %defattr(644,root,root,755)
 %{_includedir}/pyclutter-1.0
+# just .defs devel files
+%{_datadir}/pyclutter
 %{_pkgconfigdir}/pyclutter-1.0.pc
 
 %files apidocs
