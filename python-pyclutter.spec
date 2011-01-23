@@ -18,6 +18,7 @@ BuildRequires:	libxslt-progs
 BuildRequires:	pkgconfig
 BuildRequires:	python-devel >= 1:2.5
 BuildRequires:	python-pycairo-devel >= 1.2.0
+BuildRequires:	python-pygobject-apidocs
 BuildRequires:	python-pygtk-devel >= 2:2.8.0
 BuildRequires:	rpm-pythonprov
 BuildRequires:	rpmbuild(macros) >= 1.219
